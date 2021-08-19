@@ -6,16 +6,17 @@ module.exports = {
     author: config.author,
     description: config.description,
     siteUrl: config.siteUrl,
+    titleTemplate: '%s · sports',
   },
   plugins: [
-    {
-      resolve: 'gatsby-source-sanity',
-      options: {
-        projectId: config.sanityId,
-        dataset: 'production',
-        watchMode: true,
-      },
-    },
+    // {
+    //   resolve: 'gatsby-source-sanity',
+    //   options: {
+    //     projectId: config.sanityId,
+    //     dataset: 'production',
+    //     watchMode: true,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {
