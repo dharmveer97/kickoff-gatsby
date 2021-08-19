@@ -19,8 +19,7 @@ module.exports = {
   googleAnalytics: 'U-1',
   backgroundColor: '#e0e0e0',
   themeColor: '#e9bd16',
-  sanityId: 'mczms7bd',
-  // sanityId: process.env.SANITY_ID,
+  sanityId: process.env.SANITY_ID,
 
   mailchimp: '',
 };
