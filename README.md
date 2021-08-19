@@ -1,4 +1,4 @@
-# Sports website
+# Kickoff gatsby
 
 Fetch data from Sanity CMS
 
