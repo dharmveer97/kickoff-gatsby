@@ -4,10 +4,6 @@ import styled from 'styled-components';
 
 const Text = styled.h1`
   line-height: 1.2em;
-  color: ${(props) =>
-    props.primary
-      ? props.theme.textColorLite
-      : props.theme.darkAccent} !important;
 `;
 
 const Img = styled.img`
@@ -24,11 +20,6 @@ const Heading = ({ children, centered, hideBottomIcon, primary }) => (
     >
       {children}
     </Text>{' '}
-    {!hideBottomIcon && (
-      <div className="has-text-centered">
-        <Img src="/images/paint-roller.png" alt="paint-roller" />
-      </div>
-    )}
   </div>
 );
 

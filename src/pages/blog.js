@@ -1,84 +1,28 @@
 import React from 'react';
-import styled from 'styled-components';
-import { graphql } from 'gatsby';
-import Layout from '../components/Layout';
-import Seo from '../components/Seo';
+
 import config from '../utils/config';
-import HeroHeader from '../components/elements/HeroHeader';
-import News from '../components/News';
+import Seo from '../components/Seo';
+import Layout from '../components/Layout';
 
-export const blogQuery = graphql`
-  query blog {
-    allSanityArticle(sort: { fields: _createdAt, order: DESC }) {
-      edges {
-        node {
-          _id
-          title
-          slug {
-            current
-          }
-          description
-          image {
-            asset {
-              fluid(maxWidth: 1200) {
-                ...GatsbySanityImageFluid
-              }
-            }
-          }
-        }
-      }
-    }
-    sanitySiteSettings {
-      coverImage {
-        blogPage {
-          asset {
-            fluid(maxWidth: 1200) {
-              ...GatsbySanityImageFluid
-            }
-          }
-        }
-      }
-    }
-  }
-`;
-
-const NewsWrapper = styled.section`
-  padding: 50px 0px;
-  .columns {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-  }
-`;
-
-const Blog = ({ data }) => {
-  const { edges: aboutUs } = data.allSanityArticle;
-  const cover = data.sanitySiteSettings.coverImage;
+const BlogPage = () => {
   return (
     <Layout>
-      <Seo
-        title="Past Projects"
-        description={`Latest news at ${config.siteName}`}
-        url={`${config.siteUrl}/account`}
-      />
-      <HeroHeader
-        heading="Past Projects"
-        background={
-          cover && cover.blogPage ? cover.blogPage.asset.fluid.src : ''
-        }
-      />
-      <NewsWrapper className="section">
-        <div className="container">
-          <div className="columns is-multiline">
-            {aboutUs.map(({ node }) => (
-              <div className="column is-4" key={node._id}>
-                <News node={node} />
-              </div>
-            ))}
+      <Seo title="Blog" url={config.siteUrl} image={config.metaLogo} />
+      <section className="section hero is-warning is-halfheight">
+        <div className="hero-body">
+          <div className="columns">
+            <div className="column is-6">
+              <p className="title is-1">Blog Page</p>
+              <p className="subtitle is-2">
+                Half height subtitle Half height subtitleHalf height
+                subtitleHalf height subtitleHalf height subtitle height
+                subtitleHalf height subtitle
+              </p>
+            </div>
           </div>
         </div>
-      </NewsWrapper>
+      </section>
     </Layout>
   );
 };
-
-export default Blog;
+export default BlogPage;

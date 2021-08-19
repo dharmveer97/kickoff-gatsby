@@ -122,7 +122,7 @@ const LinkStyled = styled(Link)`
   }
 `;
 
-const OverlayButton = ({ buttonText, linkTo }) => {
+const Button = ({ buttonText, linkTo }) => {
   return (
     <LinkStyled to={linkTo}>
       <button to={linkTo} type="button" className="grow_skew_backward">
@@ -131,4 +131,4 @@ const OverlayButton = ({ buttonText, linkTo }) => {
     </LinkStyled>
   );
 };
-export default OverlayButton;
+export default Button;

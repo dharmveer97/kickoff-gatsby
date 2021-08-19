@@ -1,6 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset-advanced';
-import { darken, lighten } from 'polished';
 
 const mainBrandColor = '#e9bd16';
 const lightShades = '#F5F5F5';
@@ -73,7 +72,7 @@ const GlobalStyle = createGlobalStyle`
     color: ${theme.textColor} !important;
   }
   .subtitle {
-    color: ${lighten(0.06, theme.textColor)} !important;
+    color: ${theme.textColor} !important;
     line-height: 1.5;
   }
   .button.is-secondary {
@@ -82,35 +81,9 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${theme.lightAccent};
     border-color: transparent;
     transition: all 0.5s ease-out;
-    :hover {
-      background-color: ${darken(0.06, theme.lightAccent)};
-      border-color:  ${darken(0.06, theme.lightAccent)};
-      border-width: 0.5px;
-    }
-    :focus {
-      box-shadow: none !important;
-      border-color: transparent !important;
-    }
   }
 
-  .button, .input, .card {
-    box-shadow: ${theme.boxShadow};
-  }
-  .has-text-warning {
-    color: ${theme.lightAccent} !important;
-  }
-  .help.is-danger {
-    color:${theme.dangerColor} !important;
-  }
-  .is-family-primary {
-    font-family: ${theme.primaryFontFamily} !important;
-  }
-  .line-height{
-    line-height:26px !important;
-  }
-  .is-size-6 {
-    font-size: 17px !important;
-  }
+
   .markdown-container {
     h1 {
       font-size: 40px;

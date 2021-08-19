@@ -28,6 +28,7 @@
     "import/newline-after-import": "error",
     "jsx-a11y/label-has-associated-control": 0,
     "jsx-a11y/label-has-for": 0,
+    "react/jsx-props-no-spreading": "off",
     "jsx-a11y/anchor-is-valid": [
       "error",
       {
